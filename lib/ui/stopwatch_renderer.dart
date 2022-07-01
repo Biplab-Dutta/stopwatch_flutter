@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:stopwatch_flutter/ui/clock_hand.dart';
+import 'package:stopwatch_flutter/ui/clock_markers.dart';
 import 'package:stopwatch_flutter/ui/elapsed_time_text.dart';
 
 class StopwatchRenderer extends StatelessWidget {
@@ -17,22 +18,29 @@ class StopwatchRenderer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          decoration: BoxDecoration(
-            border: Border.all(
-              width: 3,
-              color: Colors.orange,
-            ),
-            shape: BoxShape.circle,
+        for (int i = 0; i < 60; i++)
+          Positioned(
+            left: radius,
+            top: radius,
+            child: ClockSecondsTickMarker(radius: radius, seconds: i),
           ),
-        ),
+        for (int i = 5; i <= 60; i += 5)
+          Positioned(
+            left: radius,
+            top: radius,
+            child: ClockTextMarker(
+              radius: radius,
+              value: i,
+              maxValue: 60,
+            ),
+          ),
         Positioned(
           left: radius,
           top: radius,
           child: ClockHand(
             handThickness: 2,
             handLength: radius,
-            rotationZAngle: pi + (2 * pi / 60000) * elapsed.inMilliseconds,
+            rotationZAngle: pi + (2 * pi * elapsed.inMilliseconds / 60000),
             color: Colors.orange,
           ),
         ),
