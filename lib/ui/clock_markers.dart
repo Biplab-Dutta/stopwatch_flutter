@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class ClockSecondsTickMarker extends StatelessWidget {
   const ClockSecondsTickMarker({
-    Key? key,
+    super.key,
     required this.seconds,
     required this.radius,
-  }) : super(key: key);
+  });
 
   final int seconds;
   final double radius;
@@ -30,11 +30,11 @@ class ClockSecondsTickMarker extends StatelessWidget {
 
 class ClockTextMarker extends StatelessWidget {
   const ClockTextMarker({
-    Key? key,
+    super.key,
     required this.value,
     required this.maxValue,
     required this.radius,
-  }) : super(key: key);
+  });
 
   final int value;
   final int maxValue;

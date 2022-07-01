@@ -5,7 +5,7 @@ import 'package:stopwatch_flutter/ui/start_stop_button.dart';
 import 'package:stopwatch_flutter/ui/stopwatch_renderer.dart';
 
 class Stopwatch extends StatefulWidget {
-  const Stopwatch({Key? key}) : super(key: key);
+  const Stopwatch({super.key});
 
   @override
   State<Stopwatch> createState() => _StopwatchState();

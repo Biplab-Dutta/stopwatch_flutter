@@ -9,8 +9,8 @@ class StopwatchRenderer extends StatelessWidget {
   const StopwatchRenderer({
     required this.elapsed,
     required this.radius,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final Duration elapsed;
   final double radius;

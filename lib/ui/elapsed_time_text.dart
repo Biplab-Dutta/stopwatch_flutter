@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ElapsedTimeText extends StatelessWidget {
-  const ElapsedTimeText({Key? key, required this.elapsed}) : super(key: key);
+  const ElapsedTimeText({super.key, required this.elapsed});
   final Duration elapsed;
 
   @override
@@ -30,7 +30,7 @@ class ElapsedTimeText extends StatelessWidget {
 }
 
 class TimeDigit extends StatelessWidget {
-  const TimeDigit(this.text, {Key? key, required this.width}) : super(key: key);
+  const TimeDigit(this.text, {super.key, required this.width});
   final String text;
   final double width;
 

@@ -6,8 +6,8 @@ class ClockHand extends StatelessWidget {
     required this.handThickness,
     required this.handLength,
     required this.color,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final double rotationZAngle, handThickness, handLength;
   final Color color;
